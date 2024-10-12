@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_clean_architecture/app/config/ui/colors.dart';
 
-class ATheme {
-  static ThemeData get lightTheme => _theme(AColors.lightColorScheme);
+class AppTheme {
+  static ThemeData get lightTheme => _theme(AppColors.lightColorScheme);
 
-  static ThemeData get darkTheme => _theme(AColors.darkColorScheme);
+  static ThemeData get darkTheme => _theme(AppColors.darkColorScheme);
 
   static ThemeData _theme(ColorScheme colorScheme) {
     return ThemeData(

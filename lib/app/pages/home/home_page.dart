@@ -1,8 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-class HomePage extends StatelessWidget {
+import 'home_page_controller.dart';
+
+class HomePage extends GetView<HomePageController> {
   const HomePage({super.key});
+
+  @override
+  HomePageController get controller => HomePageController();
 
   @override
   Widget build(BuildContext context) {

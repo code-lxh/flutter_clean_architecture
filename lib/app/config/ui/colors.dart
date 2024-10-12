@@ -6,7 +6,7 @@ import 'package:get/get.dart';
 /// (Material theme builder)[https://material-foundation.github.io/material-theme-builder/]
 /// (Material 3: Color system)[https://m3.material.io/styles/color/system/overview]
 ///
-class AColors {
+class AppColors {
   static ColorScheme get colorScheme {
     return _isLightMode ? lightColorScheme : darkColorScheme;
   }
