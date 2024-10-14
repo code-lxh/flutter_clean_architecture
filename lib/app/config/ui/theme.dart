@@ -15,6 +15,7 @@ class AppTheme {
         backButtonIconBuilder: (_) => const Icon(Icons.arrow_back_ios_new),
       ),
       scaffoldBackgroundColor: colorScheme.surface,
+      textTheme: const TextTheme(),
       appBarTheme: AppBarTheme(
         centerTitle: true,
         elevation: 0,
