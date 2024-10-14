@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_clean_architecture/build_app/build_config.dart';
 import 'package:get/get.dart';
 
 import 'home_page_controller.dart';
@@ -13,7 +14,7 @@ class HomePage extends GetView<HomePageController> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('home'),
+        title: Text("home ${BuildConfig.envName}"),
       ),
       body: Center(
         child: ElevatedButton(
@@ -23,8 +24,13 @@ class HomePage extends GetView<HomePageController> {
                 appBar: AppBar(
                   title: const Text('title'),
                 ),
-                body: const Center(
-                  child: Text('hello'),
+                body: Center(
+                  child: ElevatedButton(
+                    onPressed: () {
+                      print("${TextTheme()}");
+                    },
+                    child: Text('hello'),
+                  ),
                 ),
               ),
             );

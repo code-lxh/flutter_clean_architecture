@@ -28,6 +28,7 @@ android {
         targetSdk = flutter.targetSdkVersion
         versionCode = flutter.versionCode
         versionName = flutter.versionName
+        flavorDimensions('ecs')
     }
 
     buildTypes {
@@ -36,6 +37,28 @@ android {
             // Signing with the debug keys for now, so `flutter run --release` works.
             signingConfig = signingConfigs.debug
         }
+    }
+
+    productFlavors {
+        dev {
+            dimension 'ecs'
+            applicationId "com.my.app.dev"
+
+            manifestPlaceholders = [
+                    APP_NAME: "appName_DEV",
+            ]
+        }
+
+
+        production {
+            dimension 'ecs'
+            applicationId "com.my.app"
+
+            manifestPlaceholders = [
+                    APP_NAME: "app name",
+            ]
+        }
+
     }
 }
 
