@@ -7,6 +7,10 @@ import 'package:get/get.dart';
 /// (Material 3: Color system)[https://m3.material.io/styles/color/system/overview]
 ///
 class AppColors {
+  /// some other color
+  static Color get ff415F91 => const Color(0xff415f91);
+  static Color get ffAAC7FF => const Color(0xffaac7ff);
+
   static ColorScheme get colorScheme {
     return _isLightMode ? lightColorScheme : darkColorScheme;
   }

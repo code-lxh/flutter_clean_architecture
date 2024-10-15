@@ -22,7 +22,7 @@ class App extends StatelessWidget {
       theme: AppTheme.lightTheme,
       darkTheme: AppTheme.darkTheme,
       defaultTransition: Transition.rightToLeft,
-      initialRoute: RouterName.home,
+      initialRoute: RouterName.login,
       getPages: appRoutes,
     );
   }

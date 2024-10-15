@@ -1,43 +1,35 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_clean_architecture/build_app/build_config.dart';
+import 'package:flutter_clean_architecture/app/config/routes/router_name.dart';
+import 'package:flutter_clean_architecture/app/pages/widget/base_scaffold.dart';
 import 'package:get/get.dart';
 
-import 'home_page_controller.dart';
-
-class HomePage extends GetView<HomePageController> {
+class HomePage extends BaseScaffold<HomeController> {
   const HomePage({super.key});
 
   @override
-  HomePageController get controller => HomePageController();
+  String? get appBarTitle => "home";
 
   @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text("home ${BuildConfig.envName}"),
-      ),
-      body: Center(
+  HomeController get controller => Get.put(HomeController());
+
+  @override
+  Widget buildBody(BuildContext context) {
+    return PopScope(
+      canPop: false,
+      child: Center(
         child: ElevatedButton(
           onPressed: () {
-            Get.to(
-              Scaffold(
-                appBar: AppBar(
-                  title: const Text('title'),
-                ),
-                body: Center(
-                  child: ElevatedButton(
-                    onPressed: () {
-                      print("${TextTheme()}");
-                    },
-                    child: Text('hello'),
-                  ),
-                ),
-              ),
-            );
+            controller.onTap();
           },
-          child: Text('hello'),
+          child: const Text('Logout'),
         ),
       ),
     );
+  }
+}
+
+class HomeController extends GetxController {
+  void onTap() {
+    Get.offAllNamed(RouterName.login);
   }
 }
