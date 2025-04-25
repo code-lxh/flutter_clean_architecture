@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 // | name            | font size(pt) | line height(pt) | font weight |
 // | --------------- | :-----------: | :-------------: | :---------: |
@@ -19,8 +20,8 @@ import 'package:flutter/material.dart';
 // | Label Small     |      11       |       16        |     500     |
 class ATextStyle {
   static TextStyle bodyLarge([Color? textColor]) {
-    return const TextStyle(
-      fontSize: 16,
+    return TextStyle(
+      fontSize: 16.sp,
       fontWeight: FontWeight.w400,
       height: 1.5,
     );
@@ -28,7 +29,7 @@ class ATextStyle {
 
   static TextStyle bodyMedium([Color? textColor]) {
     return TextStyle(
-      fontSize: 14,
+      fontSize: 14.sp,
       fontWeight: FontWeight.w400,
       height: 1.42,
       color: textColor,
@@ -36,8 +37,8 @@ class ATextStyle {
   }
 
   static TextStyle bodySmall([Color? textColor]) {
-    return const TextStyle(
-      fontSize: 12,
+    return TextStyle(
+      fontSize: 12.sp,
       fontWeight: FontWeight.w400,
       height: 1.33,
     );

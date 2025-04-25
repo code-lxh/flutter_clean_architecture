@@ -1,29 +1,28 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_clean_architecture/app/config/ui/colors.dart';
-import 'package:flutter_clean_architecture/app/pages/widget/base_scaffold.dart';
+import 'package:flutter_clean_architecture/app/pages/widgets/default_scaffold_mixin.dart';
 import 'package:get/get.dart';
 
 import '../../config/routes/router_name.dart';
 import '../../config/ui/typography.dart';
 
-class LoginPage extends BaseScaffold<LoginController> {
+class LoginPage extends StatelessWidget with DefaultScaffoldMixin {
   LoginPage({super.key});
 
-  @override
-  LoginController controller = LoginController();
+  final LoginController controller = LoginController();
 
   @override
-  String? get appBarTitle => "Login";
+  String? get title => "Login";
 
   @override
-  Widget? buildBody(BuildContext context) {
+  Widget buildBody(BuildContext context) {
     return PopScope(
       canPop: false,
       child: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Text("Log in"),
+            const Text("Log in"),
             _buildInputField(
               hintText: "请输入用户名",
               onValueChanged: (value) {
@@ -104,7 +103,7 @@ class LoginController {
 
   void onTapLogin() {
     if (canLogin.value) {
-      Get.offAllNamed(RouterName.homePage);
+      Get.offAllNamed(RouterName.home);
     }
   }
 }

@@ -1,1 +1,1 @@
-const String appName = 'Flutter Demo';
+const String someFoo = 'some foo';

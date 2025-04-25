@@ -28,7 +28,7 @@ android {
         targetSdk = flutter.targetSdkVersion
         versionCode = flutter.versionCode
         versionName = flutter.versionName
-        flavorDimensions('ecs')
+        flavorDimensions('flavor')
     }
 
     buildTypes {
@@ -41,7 +41,7 @@ android {
 
     productFlavors {
         dev {
-            dimension 'ecs'
+            dimension 'flavor'
             applicationId "com.my.app.dev"
 
             manifestPlaceholders = [
@@ -51,7 +51,7 @@ android {
 
 
         production {
-            dimension 'ecs'
+            dimension 'flavor'
             applicationId "com.my.app"
 
             manifestPlaceholders = [

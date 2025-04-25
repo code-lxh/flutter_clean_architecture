@@ -10,7 +10,7 @@ List<GetPage> appRoutes = [
     page: () => LoginPage(),
   ),
   GetPage(
-    name: RouterName.homePage,
-    page: () => const HomePage(),
+    name: RouterName.home,
+    page: () => HomePage(),
   ),
 ];

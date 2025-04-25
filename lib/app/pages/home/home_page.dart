@@ -1,27 +1,38 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_clean_architecture/app/config/routes/router_name.dart';
-import 'package:flutter_clean_architecture/app/pages/widget/base_scaffold.dart';
+import 'package:flutter_clean_architecture/app/pages/widgets/default_scaffold_mixin.dart';
+import 'package:flutter_clean_architecture/app/pages/widgets/foo_dialog.dart';
 import 'package:get/get.dart';
 
-class HomePage extends BaseScaffold<HomeController> {
-  const HomePage({super.key});
+class HomePage extends GetView<HomeController> with DefaultScaffoldMixin {
+  HomePage({super.key});
 
   @override
-  String? get appBarTitle => "home";
+  String? get title => "home";
 
   @override
-  HomeController get controller => Get.put(HomeController());
+  HomeController controller = HomeController();
 
   @override
   Widget buildBody(BuildContext context) {
     return PopScope(
       canPop: false,
       child: Center(
-        child: ElevatedButton(
-          onPressed: () {
-            controller.onTap();
-          },
-          child: const Text('Logout'),
+        child: Column(
+          children: [
+            ElevatedButton(
+              onPressed: () {
+                controller.onTap();
+              },
+              child: const Text("Logout"),
+            ),
+            ElevatedButton(
+              onPressed: () {
+                Get.dialog(const FooDialog());
+              },
+              child: const Text("Dialog"),
+            ),
+          ],
         ),
       ),
     );

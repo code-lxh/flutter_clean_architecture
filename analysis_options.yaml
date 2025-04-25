@@ -1,1 +1,11 @@
 include: package:flutter_lints/flutter.yaml
+
+linter:
+  rules:
+    always_declare_return_types: true
+    always_put_control_body_on_new_line: ture
+    avoid_empty_else: true
+    curly_braces_in_flow_control_structures: true
+    empty_statements: true
+    prefer_const_constructors: true
+    require_trailing_commas: true
